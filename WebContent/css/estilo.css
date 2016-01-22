@@ -1,0 +1,234 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*corpo*/
+body{font-size:1.2em; margin:0 auto; background-color:rgba(215,215,215,0.20);}
+
+/*tudo*/
+.container {
+	max-width:100%;
+	margin:0 auto;
+	}
+
+/*Formatação de largura de imagens, videos e etc*/	
+img,
+picture,
+video,
+embed {
+    max-width: 100%;
+}
+
+/*Formatação do cabecalho*/
+.cabecalho {
+	width:100%;
+	margin-top:0em;
+	margin-bottom:0em;
+}
+
+/* Formatação do menu */
+
+.menu{background-color:black;}
+		
+.menu ul {
+			width: 100%;
+			margin: 0 auto;
+			padding:0px;
+			list-style:none;
+			text-align:center;
+			height:50px;
+			line-height:50px;	
+		}
+		
+.menu ul li { display:inline;}
+
+	
+.menu ul li a {
+			padding: 2px 50px;
+			display:inline-block;
+			color: #fff;
+			text-decoration: none;
+			height:50px;
+			
+		}
+
+		
+/*cor da seleção com o mouse*/		
+.menu ul li a:hover {
+			background-color:#D6D6D6;
+			color: #6D6D6D;
+			
+		}
+		
+.menu-fixo  {
+		    position:fixed !important;
+		    top: 0px;
+			width:100%;
+			background-color:rgba(0,0,0,0.50);
+		    z-index: 99;
+		}
+
+/*Fim da formatação do menu */
+
+
+.banner {
+    height: auto;
+    position: relative;
+	margin:50px;
+	
+}
+
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+  border:0px outset rgba(150,168,255,0.80);
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: 450px;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+  
+/*
+.caixa { 
+    width: 42.553191489362%; /* 264px / 1128px 
+    padding: 2.4em 4em 2.4em 4em;
+    position: absolute;
+    top: 50px;
+    background: rgba(0,0,0,0.2);
+}
+*/
+*, *:before, *:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+
+.principal{ 
+position:relative;
+}
+	
+#imc {
+	width:100%;
+	height:auto;  
+	margin-bottom:0.5em;
+	padding:10px;
+	text-align:center;
+	
+	text-align:justify;
+	}
+	
+#mapa { margin:0 auto;}
+
+#map-canvas {width:75%; height: auto; margin:0 auto; border: 3px outset #FFFFFF; padding:20px; }
+
+#sob {width:100%;
+	height:auto;  
+	margin-bottom:0.5em;
+	padding:10px;
+	text-align:center;
+	
+	text-align:justify;}
+
+#sobres {margin:0 auto;}
+
+#sobre {
+	width:75%; height: auto; margin:0 auto; border: 3px outset #FFFFFF; padding:20px;
+	}
+
+#contato {
+	width:50%;
+	height:auto;   
+	margin-bottom:0.5em;
+	padding:0px;
+	
+	
+	}
+	
+#formulario {width:80%; padding-left:24%; border: 3px outset #FFFFFF; margin-left:55%;}
+
+
+form { 
+
+font-size: 15px; 
+max-width: 50%; 
+padding:0px;}
+
+input, textarea { 
+width: 100%; 
+padding: 5px; 
+color: black; 
+margin-left: 20px; 
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px;
+border: 1px solid; 
+} 
+
+input:hover, textarea:hover, input:focus, textarea:focus {  
+background-color: #DDDDDD; 
+color: black;  
+} 
+
+.submit input { 
+background-color: #DDDDDD; 
+height: auto; 
+width: 100px; 
+border-radius: 5px; 
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border: 1px solid; 
+color: black; 
+} 
+
+textarea { 
+width: 20%; 
+height: 120px; 
+line-height: 20px; 
+max-width: 400px; 
+} 
+
+form label { 
+margin-left: 20px; 
+color: black; 
+font-weight: bold;
+ 
+} 
+
+
+
+
+.footer {
+	
+clear:both; 
+text-align:center; 
+border:;
+margin-top:0.5em;
+width:100%;}
+
+h1{text-align:center;}
+
+
+
+

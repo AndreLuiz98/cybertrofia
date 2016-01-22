@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>SITE</title>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+ 
+<script type="text/javascript" src="js/index-js.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+$(function(){var nav = $('.menu'); $(window).scroll(function () { 
+				if ($(this).scrollTop() > 0) { 
+					nav.addClass("menu-fixo"); 
+				} else { 
+					nav.removeClass("menu-fixo"); 
+				} 
+			});  
+		});
+
+jQuery(document).ready(function($) { 
+    $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
+   });
+});
+
+$(function() {
+    $(".rslides").responsiveSlides();
+  });
+  
+$(".rslides").responsiveSlides({
+  auto: true,             // Boolean: Animate automatically, true or false
+  speed: 500,            // Integer: Speed of the transition, in milliseconds
+  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+  pager: false,           // Boolean: Show pager, true or false
+  nav: false,             // Boolean: Show navigation, true or false
+  random: false,          // Boolean: Randomize the order of the slides, true or false
+  pause: false,           // Boolean: Pause on hover, true or false
+  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+  prevText: "Previous",   // String: Text for the "previous" button
+  nextText: "Next",       // String: Text for the "next" button
+  maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+  manualControls: "",     // Selector: Declare custom pager navigation
+  namespace: "rslides",   // String: Change the default namespace used
+  before: function(){},   // Function: Before callback
+  after: function(){}     // Function: After callback
+});
+
+
+//function initialize() {
+//    var mapCanvas = document.getElementById('map-canvas');
+  //  var mapOptions = {
+    //  center: new google.maps.LatLng(-7.2254158,-35.8849123,141),
+      //zoom: 16,
+      //mapTypeId: google.maps.MapTypeId.ROADMAP
+//}
+  //      var map = new google.maps.Map(mapCanvas, mapOptions)
+    //  }
+      //google.maps.event.addDomListener(window, 'load', initialize);
+	  
+	  
+function Enviar() { var nome = document.getElementById("nomeid"); if (nome.value != "") { alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso'); } } 
+
+ </script>
+
+</head>
+
+
+
+<body>
+<header id="inicio">
+  <nav class="menu">
+    <ul>
+      <li><a href="#inicio" class="scroll">INÍCIO</a></li>
+      <li><a href="#imc" class="scroll">IMC</a></li>
+      <li><a href="#sobre" class="scroll">SOBRE</a></li>
+      <li><a href="#contato" class="scroll">CADASTRO</a></li>
+      <li><a href="#login" class="scroll">LOGIN</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+<header class="cabecalho">
+  <div class="banner">
+    <ul class="rslides">
+      <li><img src="img/imagem5.jpg" alt=""></li>
+      <li><img src="img/imagem3.jpg" alt=""></li>
+      <li><img src="img/imagem4.jpg" alt=""></li>
+    </ul>
+    <!--
+  <div class="caixa">
+    <h1>TERRA: SUA LINDA!</h1>
+    <p>Experimente a mudança de paradigma de conhecer o nosso planeta azul de um novo ponto de vista.</p>
+    </div> 
+    --> 
+  </div>
+</header>
+<section class="principal">
+  <div id="imc">
+   <h1>IMC</h1>
+    <div id="mapa"></div>
+  	<div id="map-canvas">O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal. Tal índice foi desenvolvido pelo polímata Lambert Quételet no fim do século XIX. Trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa, ou seja, é um preditor internacional de obesidade adotado pela Organização Mundial da Saúde (OMS). <a href="imc.html" target="_blank">Para calcular seu IMC clique aqui</a>
+
+</div>   
+</div>
+ 
+  
+  <div id="sob">
+  <h1>HIPERTROFIA</h1>
+  <div id="sobres"></div>
+  <div id="sobre"> 
+   <p>A hipertrofia muscular é uma resposta fisiológica caracterizada pelo aumento do volume dos músculos decorrentes de estímulos gerados pelo exercício físico. Esta resposta é uma adaptação ao estresse decorrente do aumento de tensão e/ou ph gerados no tecido muscular. A musculação é a forma mais eficiente de obter hipertrofia muscular.
+A hipertrofia não se deve somente à musculação. É necessária uma dieta adequada para suprir a perda de energia e possibilitar a construção do músculo. Uma dieta inapropriada acompanhada de musculação pode resultar em perda de conteúdo proteico no tecido muscular, pois o corpo utilizará as proteínas dos músculos para suprir as demandas energéticas. Devido à grande exigência social, e por necessidades estéticas imediatistas, alguns jovens optam pelo uso de esteróides anabolizantes, substâncias que proporcionam um rápido ganho muscular e que podem gerar uma série de problemas na saúde. A hipertrofia, que consiste no ganho de massa muscular, ocorre quando o músculo faz determinado esforço. Essa contração consiste no deslizamento da actina sobre a miosina, que dependendo do ponto de inserção nos ossos irão realizar um determinado movimento no corpo.</p>
+  </div>
+  </div>
+  
+  <div id="contato">
+  <div id="formulario">
+   <form name="meu_form">
+    <h1>CADASTRO</h1>
+    <p class="nome">
+    <label for="nome">Nome</label><br /><br/>
+    <input type="text" id="nomeid" placeholder="Insira seu nome" required name="nome" />
+    
+    </p>
+    
+    <p class="senha">
+     <label for="senha">Senha</label><br /><br/>
+    <input type="password" id="senhaid" placeholder="Máximo 8 caracteres" required size="10" maxlength="8" name="senha" />
+   
+    </p>
+    
+     <p>
+    <label for="email">Email</label><br /><br/>
+    <input type="email" id="emailid" placeholder="exemplo@email.com" required name="email" />
+    
+    </p>
+    
+    
+    
+    <p class="submit">
+    <input type="submit" onClick="Enviar();" value="Enviar"/>
+    </p>
+    
+    </form>
+    </div>
+  
+  
+  	
+<div id="login">
+  <div id="formulario">
+   <form name="meu_form">
+    <h1>LOGIN</h1>
+     <p>
+    <label for="email">Email</label><br /><br/>
+    <input type="email" id="emailid" placeholder="exemplo@email.com" required name="email" />
+    
+    </p>
+    
+    <p class="senha">
+     <label for="senha">Senha</label><br /><br/>
+    <input type="password" id="senhaid" placeholder="Máximo 8 caracteres" required size="10" maxlength="8" name="senha" />
+   
+    </p>
+    
+    
+    
+    
+    
+    <p class="submit">
+    <input type="submit" onClick="Enviar();" value="Acessar"/>
+    </p>
+    
+    </form>
+    </div>
+  </div>
+  </div>
+</section>
+<footer class="footer">
+  <p></p>
+  <small class="creditos"></small> </footer>
+</div>
+</body>
+</html>
