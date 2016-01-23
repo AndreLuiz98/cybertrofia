@@ -2,47 +2,43 @@ package br.ifpb.edu.entidades;
 
 import java.sql.*;
 
-import br.ifpb.edu.conexao.*;
+import java.util.List;
 
-public class PessoaDAO {
-	private Connection connection;
+import org.hibernate.Query;
+import org.hibernate.Session;
 
-	public PessoaDAO() {
-		this.connection = new ConnectionFactory().getConnection();
-	}
+import br.ifpb.edu.hibernate.*;
 	
-	public boolean insert (Pessoa pessoa) throws SQLException {
-		try{
-			Connection connection = new ConnectionFactory().getConnection();
-		} catch (RuntimeException e){
-			System.out.println("Erro de Conexão");
-			return false;
+	public class PessoaDAO extends Dao<Pessoa> {
 
+		@Override
+		public Pessoa getById(String pk) {
+			
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			
+			Pessoa pessoa = session.get(Pessoa.class, pk);
+			
+			session.getTransaction().commit();
+			session.close();
+			
+			return pessoa;
 		}
-		String sql = "insert into tb_pessoa " +
-				"(NOME,EMAIL,SENHA)" +
-				" values (?,?,?);";
 
-		try {
+		@Override
+		public List<Pessoa> getAll() {
+			
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
 
+			Query query = session.getNamedQuery("Pessoa.getAll");
 
-			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+			@SuppressWarnings("unchecked")
+			List<Pessoa> pessoas = query.list();
 
-			stmt.setString(1,pessoa.getNome());
-			stmt.setString(2,pessoa.getEmail());
-			stmt.setString(3,pessoa.getSenha());
+			session.getTransaction().commit();
+			session.close();
 
-			stmt.execute();
-			stmt.close();
-
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		return true;
+			return pessoas;
+		}	
 	}
-	  public void disconnect() throws SQLException {
-			this.connection.close();	
-	  }
-	
-}
