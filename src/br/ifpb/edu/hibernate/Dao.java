@@ -5,14 +5,14 @@ import java.util.List;
 import org.hibernate.Session;
 
 public abstract class Dao<T> {
-	
+
 	public int insert(T entity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 
 		session.beginTransaction();
 
 		session.save(entity);
-		
+
 		session.getTransaction().commit();
 		session.close();
 		return 0;
@@ -39,8 +39,8 @@ public abstract class Dao<T> {
 		session.getTransaction().commit();
 		session.close();
 	}
-	
+
 	public abstract T getById(String pk);
-	
+
 	public abstract List<T> getAll();
 }

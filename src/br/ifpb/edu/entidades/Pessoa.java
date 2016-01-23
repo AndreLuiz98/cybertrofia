@@ -1,6 +1,12 @@
 package br.ifpb.edu.entidades;
 
+import javax.persistence.*;
+
+@Entity
+@NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
 public class Pessoa {
+	
+	@Id
 	private String nome;
 	private String senha;
 	private String email;
