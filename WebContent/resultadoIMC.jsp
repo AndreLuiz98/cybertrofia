@@ -11,9 +11,9 @@
 <body>
 
 	<c:set var ="pesoKG" value="${peso}"/>
-	<c:set var="Alturacm" value="${altura}"/>
+	<c:set var="Alturacm" value="${alturaConversao}"/>
 	<c:forEach var="x1" items="1">  
-	<fmt:formatNumber var="resultado_imc" value="${peso/(altura)*(altura)}" 
+	<fmt:formatNumber var="resultado_imc" value="${peso/(alturaConversao)*(alturaConversao)}" 
 	pattern="#####0.00"/>  
 	${resultado_imc}      
 	</c:forEach>  

@@ -14,7 +14,9 @@ public abstract class Dao<T> {
 		session.save(entity);
 
 		session.getTransaction().commit();
+		
 		session.close();
+		
 		return 0;
 	}
 
@@ -26,19 +28,11 @@ public abstract class Dao<T> {
 		session.update(entity);
 
 		session.getTransaction().commit();
+		
 		session.close();
 	}
 
-	public void delete(T entity) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
 
-		session.beginTransaction();
-
-		session.delete(entity);
-
-		session.getTransaction().commit();
-		session.close();
-	}
 
 	public abstract T getById(String pk);
 

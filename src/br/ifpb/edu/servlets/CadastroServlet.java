@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.ifpb.edu.entidades.*;
-@WebServlet("/InserirBD")
+@WebServlet("/CadastroServlet")
 public class CadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

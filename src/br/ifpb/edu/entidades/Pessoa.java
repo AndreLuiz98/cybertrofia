@@ -6,26 +6,11 @@ import javax.persistence.*;
 @NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
 public class Pessoa {
 	
-	@Id
+	@Id	
 	private String nome;
 	private String senha;
 	private String email;
-	private double peso;
-	private double altura;
 	
-	
-	public double getPeso() {
-		return peso;
-	}
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
-	public double getAltura() {
-		return altura;
-	}
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
 	public String getNome() {
 		return nome;
 	}
