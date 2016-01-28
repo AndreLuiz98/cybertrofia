@@ -42,12 +42,11 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 
 		try {
 
-			String sql = "INSERT INTO tb_pessoa (" 
-					+ " ID,"
+			String sql = "INSERT INTO tb_pessoa ("
 					+ " NOME,"
 					+ " EMAIL,"
 					+ " SENHA)"
-					+ " VALUES (?, ?, ?, ?)";
+					+ " VALUES (?, ?, ?)";
 
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
 
@@ -80,7 +79,7 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 
 		try {
 
-			String sql = "SELECT * "
+			String sql = "SELECT *"
 					+ "	FROM tb_pessoa AS pessoa"
 					+ " WHERE pessoa.NOME = " 
 					+ nome;
