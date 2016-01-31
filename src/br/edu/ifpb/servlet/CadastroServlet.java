@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +36,6 @@ public class CadastroServlet extends HttpServlet {
 
 			pessoas.add(pessoa);
 
-
 			request.setAttribute("pessoas", pessoas);
 
 		} catch (SQLException e) {
@@ -45,8 +43,7 @@ public class CadastroServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		RequestDispatcher rq = request.getRequestDispatcher("index.html");
-		rq.forward(request, response);
+		response.sendRedirect("index.html");
 	}
 }
 

@@ -50,9 +50,9 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
 
-			stmt.setString(2, pessoa.getNome());
-			stmt.setString(3, pessoa.getEmail());
-			stmt.setString(4, pessoa.getEmail());
+			stmt.setString(1, pessoa.getNome());
+			stmt.setString(2, pessoa.getEmail());
+			stmt.setString(3, pessoa.getSenha());
 
 			stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -68,7 +68,7 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 	}
 
 	@Override
-	public Pessoa getByNome(String nome) throws SQLException {
+	public Pessoa getById(String nome) throws SQLException {
 
 
 		Pessoa pessoa = null;
@@ -91,7 +91,7 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 			List<Pessoa> pessoas = convertToList(rs);
 
 			if (!pessoas.isEmpty())
-				
+
 				pessoa = pessoas.get(0);
 
 		} catch (SQLException sqle) {
@@ -131,32 +131,67 @@ public class PessoaDAO implements GenericDAO <String, Pessoa>{
 
 		return pessoas;
 	}
+	
+	public boolean authenticateLogin(String email, String senha) throws SQLException{
+		
+		boolean isValid = false;
+		
+		try {			
+
+			String sql = "SELECT *"
+					+ "	FROM tb_pessoa AS pessoa"
+					+ " WHERE pessoa.EMAIL = ?"
+					+ " and pessoa.SENHA = ?";
+			
+			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+
+			stmt.setString(1, email);
+			stmt.setString(2, senha);
+			
+			ResultSet rs = stmt.executeQuery();
+
+			if(rs.next()) {
+				
+				isValid = true; 
+				
+			}
+			
+		} catch(SQLException sqle) {
+			
+			throw sqle;
+			
+		} finally {
+
+			connection.close();
+		}
+
+		return isValid;
+	}
 
 	@Override
 	public void update(Pessoa pessoa) throws SQLException {
-		// TODO Auto-generated method stub
 
 	}
 
-
 	@Override
 	public List<Pessoa> getAll() throws SQLException {
-		// TODO Auto-generated method stub
+
 		return null;
+
 	}
 
 	@Override
 	public List<Pessoa> find(Pessoa pessoa) throws SQLException {
-		// TODO Auto-generated method stub
+
 		return null;
+
 	}
 
 	@Override
 	public int delete(String pk) throws SQLException {
-		// TODO Auto-generated method stub
+
 		return 0;
+
 	}
-
-
 
 }

@@ -13,7 +13,7 @@ public interface GenericDAO<PK, T> {
 
 	public List<T> getAll() throws SQLException;
 
-	public T getByNome(PK pk) throws SQLException;
+	public T getById(PK pk) throws SQLException;
 
 	public List<T> find(T entity) throws SQLException;
 

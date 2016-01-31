@@ -23,9 +23,7 @@ public class ConnectionFactory {
 
 			Class.forName("com.mysql.jdbc.Driver");
 
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/pessoa", 
-					"root", 
-					"");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/pessoa","root","");
 
 		} catch (SQLException | ClassNotFoundException e) {
 
