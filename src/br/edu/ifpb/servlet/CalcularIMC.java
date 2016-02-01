@@ -1,3 +1,4 @@
+
 package br.edu.ifpb.servlet;
 
 import java.io.IOException;
@@ -23,10 +24,10 @@ public class CalcularIMC extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		List<Pessoa> imcs = (List<Pessoa>) session.getAttribute("imcs");
+		List<Pessoa> pessoas = (List<Pessoa>) session.getAttribute("pessoas");
 
-		if (imcs == null) {			
-			imcs = new ArrayList<Pessoa>();		
+		if (pessoas == null) {			
+			pessoas = new ArrayList<Pessoa>();		
 		} 
 
 		String alturaString = request.getParameter("altura");
@@ -40,9 +41,9 @@ public class CalcularIMC extends HttpServlet {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setImc(calcIMC);
 
-		imcs.add(pessoa);
+		pessoas.add(pessoa);
 
-		session.setAttribute("imcs", imcs);
+		session.setAttribute("pessoas", pessoas);
 
 		response.sendRedirect("resultadoIMC.jsp");
 
