@@ -30,16 +30,13 @@ public class CalcularIMC extends HttpServlet {
 			pessoas = new ArrayList<Pessoa>();		
 		} 
 
-		String alturaString = request.getParameter("altura");
-		String pesoString = request.getParameter("peso");
+		Double alturaDouble = Double.parseDouble(request.getParameter("altura"));
+		Double pesoDouble = Double.parseDouble(request.getParameter("peso"));
 
-		double alturaDouble = Double.parseDouble(alturaString);
-		double pesoDouble = Double.parseDouble(pesoString);
-
-		double calcIMC = pesoDouble / (alturaDouble * alturaDouble);
+		Double resultadocalcIMC = pesoDouble / (alturaDouble * alturaDouble);
 
 		Pessoa pessoa = new Pessoa();
-		pessoa.setImc(calcIMC);
+		pessoa.setImc(resultadocalcIMC);
 
 		pessoas.add(pessoa);
 

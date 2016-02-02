@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<c:set var="calcIMC" scope="session" value="calcIMC" />
+	<c:set var="calcIMC" scope="session" value="resultadocalcIMC" />
 
 	<c:if test="${(calcIMC >= 16)  && (calcIMC <= 16.99)}">
 		<!-- Baixo peso grave = IMC entre 16 e 16,99 -->
