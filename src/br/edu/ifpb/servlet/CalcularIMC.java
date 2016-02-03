@@ -41,8 +41,9 @@ public class CalcularIMC extends HttpServlet {
 		pessoas.add(pessoa);
 
 		session.setAttribute("pessoas", pessoas);
-
-		response.sendRedirect("resultadoIMC.jsp");
+		
+		RequestDispatcher rq = request.getRequestDispatcher("resultadoIMC.jsp");
+		rq.forward(request, response);
 
 	}
 
